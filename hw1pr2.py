@@ -1,5 +1,5 @@
 """
-Start file for hw1pr2 of Big Data Summer 2017
+Start file for hw1pr2 of Big Data Spring 2018
 
 Before attemping the problem, please familiarize with pandas and numpy
 libraries. Tutorials can be found online:
