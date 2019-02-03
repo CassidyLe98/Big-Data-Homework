@@ -45,7 +45,7 @@ if __name__ == '__main__':
 	# NOTE: to finish this part, you need to finish the part(a) of this part
 	# 		first
 
-	# load the four data points of tihs problem
+	# load the four data points of this problem
 	X = np.array([0, 2, 3, 4])
 	y = np.array([1, 3, 6, 8])
 
@@ -57,8 +57,8 @@ if __name__ == '__main__':
 	# TODO: replace the m_opt and b_opt with the solution you obtained from
 	# 		part (a), note that y = mx + b
 	"*** YOUR CODE HERE ***"
-	m_opt = 0
-	b_opt = 0
+	m_opt = Fraction(62,35)
+	b_opt = Fraction(18,35)
 	"*** END YOUR CODE HERE ***"
 
 
@@ -74,8 +74,10 @@ if __name__ == '__main__':
 	X_space = []
 	y_space = []
 	"*** YOUR CODE HERE ***"
-
-
+	X_space = np.linspace(-25,25,num=100)
+	for i in xPoints:
+		y = m_opt*i+b_opt
+	y_space = np.append(y_space,y)
 	"*** END YOUR CODE HERE ***"
 
 	# plot the optimal learn fit you obtained and save it to your current
@@ -86,7 +88,7 @@ if __name__ == '__main__':
 
 
 
-
+	'''
 	# =============part d: Optimal linear fit with random data points=================
 
 	# variables to start with
@@ -146,7 +148,7 @@ if __name__ == '__main__':
 	"*** YOUR CODE HERE ***"
 
 
-	"*** END YOUR CODE HERE ***"
+	"*** END YOUR CODE HERE ***"	'''
 
 	# generate plot
 	# plot original data points and line
