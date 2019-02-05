@@ -28,7 +28,7 @@ variables we provided, otherwise, the function may not work.
 """
 
 
-#import pandas as pd
+import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import time
@@ -86,7 +86,7 @@ if __name__ == '__main__':
 
 
 
-	'''
+	
 	# =============part d: Optimal linear fit with random data points=================
 
 	# variables to start with
@@ -97,8 +97,7 @@ if __name__ == '__main__':
 
 	noise = []
 	"*** YOUR CODE HERE ***"
-
-
+	noise = np.random.normal(mu, sigma, sampleSize).reshape(X_space.shape)
 	"*** END YOUR CODE HERE ***"
 
 	# TODO: generate y-coordinate of the 100 points with noise
@@ -109,9 +108,8 @@ if __name__ == '__main__':
 
 	y_space_rand = np.zeros(len(X_space))
 	"*** YOUR CODE HERE ***"
-
+	y_space_rand = m_opt*X_space+b_opt+noise
 	"*** END YOUR CODE HERE ***"
-
 
 	# TODO: calculate the new parameters for optimal linear fit using the
 	#		100 new points generated above
@@ -125,12 +123,13 @@ if __name__ == '__main__':
 
 
 	X_space_stacked = X_space	# need to be replaced following hint 1 and 2
-	W_opt = None
+	#W_opt = None
 	"*** YOUR CODE HERE ***"
-
-
+	X_space_stacked = np.hstack((np.ones_like(X_space), X_space))
+	W_opt = np.linalg.solve(X_space_stacked.T @ X_space_stacked, X_space_stacked.T @ y_space_rand)
 	"*** END YOUR CODE HERE ***"
-
+	
+	
 	# get the new m, and new b from W_opt obtained above
 	b_rand_opt, m_rand_opt = W_opt.item(0), W_opt.item(1)
 
@@ -144,10 +143,9 @@ if __name__ == '__main__':
 
 	y_pred_rand = []
 	"*** YOUR CODE HERE ***"
-
-
-	"*** END YOUR CODE HERE ***"	'''
-
+	y_pred_rand = m_rand_opt*X_space+b_rand_opt
+	"*** END YOUR CODE HERE ***"	
+	
 	# generate plot
 	# plot original data points and line
 	plt.plot(X, y, 'ro')
