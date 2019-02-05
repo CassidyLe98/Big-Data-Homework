@@ -22,13 +22,13 @@ Note:
 variables we provided, otherwise, the function may not work.
 
 3. Placeholder values are given for the variables needed, they need to be
-   replaced with your own code
+   replaced with your own code]
 
 3. Remember to comment out the TODO comment after you finish each part.
 """
 
 
-import pandas as pd
+#import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import time
@@ -57,8 +57,8 @@ if __name__ == '__main__':
 	# TODO: replace the m_opt and b_opt with the solution you obtained from
 	# 		part (a), note that y = mx + b
 	"*** YOUR CODE HERE ***"
-	m_opt = Fraction(62,35)
-	b_opt = Fraction(18,35)
+	m_opt = 62/35
+	b_opt = 18/35
 	"*** END YOUR CODE HERE ***"
 
 
@@ -74,10 +74,8 @@ if __name__ == '__main__':
 	X_space = []
 	y_space = []
 	"*** YOUR CODE HERE ***"
-	X_space = np.linspace(-25,25,num=100)
-	for i in xPoints:
-		y = m_opt*i+b_opt
-	y_space = np.append(y_space,y)
+	X_space = np.linspace(-1,5,num=100).reshape(-1,1)
+	y_space = m_opt*X_space+b_opt
 	"*** END YOUR CODE HERE ***"
 
 	# plot the optimal learn fit you obtained and save it to your current
